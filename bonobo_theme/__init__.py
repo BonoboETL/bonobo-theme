@@ -1,7 +1,7 @@
 import os
 
-import _version as version
-
+__version_info__ = (0, 1, 0)
+__version__ = '.'.join(map(str, __version_info__))
 
 def get_path():
     """
@@ -12,7 +12,7 @@ def get_path():
 
 
 def update_context(app, pagename, templatename, context, doctree):
-    context['theme_version'] = version.__version__
+    context['theme_version'] = __version__
 
 
 def setup(app):
@@ -20,4 +20,4 @@ def setup(app):
     app.add_html_theme('name_of_theme', os.path.abspath(os.path.dirname(__file__)))
 
     app.connect('html-page-context', update_context)
-    return {'version': version.__version__, 'parallel_read_safe': True}
+    return {'version': __version__, 'parallel_read_safe': True}
