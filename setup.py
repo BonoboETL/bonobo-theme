@@ -1,5 +1,8 @@
 from bonobo_theme import _version as version
 
+__version_info__ = (0, 1, 0)
+__version__ = '.'.join(map(str, __version_info__))
+
 from setuptools import setup
 
 # README into long description
@@ -8,7 +11,7 @@ from setuptools import setup
 
 setup(
     name='bonobo-theme',
-    version=version.__version__,
+    version=__version__,
     description='Theme for Bonobo ETL',
     long_description='Theme for Bonobo ETL',
     author='Andrew Mirsky',
