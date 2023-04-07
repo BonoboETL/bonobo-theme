@@ -1,0 +1,4 @@
+include bonobo_theme/theme.conf
+recursive-include bonobo_theme *.html *.js *.scss *.css *.less
+
+
